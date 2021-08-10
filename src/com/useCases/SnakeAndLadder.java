@@ -7,7 +7,7 @@ public class SnakeAndLadder {
 	public static void main(String[] args) {
 		int player1 = 0, player2 = 0, flag = 0;
 		// System.out.println(player1);
-		int turn1 = 1, turn2 = 2;
+		int turn1 = 1, turn2 = 2,diceCount=0;
 		Random r = new Random();
 
 		while (player1 != 100 && player1 < 100 || player2 != 100 && player2 < 100) {
@@ -15,7 +15,8 @@ public class SnakeAndLadder {
 				turn1++;
 
 				int diceRoll = r.nextInt(7);
-				System.out.println("dice"+diceRoll);
+				diceCount++;
+				
 				if (diceRoll == 0) {
 					diceRoll++;
 				}
@@ -26,7 +27,9 @@ public class SnakeAndLadder {
 					player1 = 0;
 
 				} else if ((player1 += diceRoll) == 100) {
-					
+					System.out.println("dice"+diceCount);
+					System.out.println("You winn the game");
+					flag = 1;
 					break;
 					
 				} else if ((player1 += diceRoll) > 100) {
@@ -50,7 +53,7 @@ public class SnakeAndLadder {
 						player1 += diceRoll;
 					}
 					
-					System.out.println("abc"+player1);
+				
 				}
 			}
 
